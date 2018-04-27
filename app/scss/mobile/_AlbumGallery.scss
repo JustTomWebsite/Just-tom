@@ -1,0 +1,118 @@
+.album-gallery {
+	.album-gallery-inner {
+		transition: transform 0.3s;
+
+		&.a1 {
+			transform: translateX(190px);
+		}
+
+		&.a2 {
+			transform: auto;
+		}
+
+		&.a3 {
+			transform: translateX(-190px);
+		}
+	}
+
+	.album-gallery-controls {
+		@include hcenter();
+		top: 183px;
+		transition: opacity 0.3s;
+
+		.dot {
+			position: relative;
+			float: left;
+			width: 10px;
+			height: 10px;
+			border: 2px solid $accentColor;
+			border-radius: 20px;
+			margin: 0px 5px;
+
+			.dot-inner {
+				border-radius: 20px;
+				position: absolute;
+				top: -2px;
+				left: -2px;
+				width: inherit;
+				height: inherit;
+				background: $accentColor;
+				opacity: 0;
+				transition: 0.3s opacity;
+			}
+
+			&.selected .dot-inner {
+				opacity: 1;
+			}
+		}
+
+		.dot:first-child {
+			margin-left: 0px;
+		}
+
+		.dot:last-child {
+			margin-right: 0px;
+		}
+	}
+}
+
+@media(max-width: $phone5) {
+	.album-gallery {
+		.album-gallery-inner {
+			transition: transform 0.3s;
+	
+			&.a1 {
+				transform: translateX(146px);
+			}
+	
+			&.a2 {
+				transform: auto;
+			}
+	
+			&.a3 {
+				transform: translateX(-146px);
+			}
+		}
+	
+		.album-gallery-controls {
+			@include hcenter();
+			top: 143px;
+			transition: opacity 0.3s;
+	
+			.dot {
+				position: relative;
+				float: left;
+				width: 10px;
+				height: 10px;
+				border: 2px solid $accentColor;
+				border-radius: 20px;
+				margin: 0px 5px;
+	
+				.dot-inner {
+					border-radius: 20px;
+					position: absolute;
+					top: -2px;
+					left: -2px;
+					width: inherit;
+					height: inherit;
+					background: $accentColor;
+					opacity: 0;
+					transition: 0.3s opacity;
+				}
+	
+				&.selected .dot-inner {
+					opacity: 1;
+				}
+			}
+	
+			.dot:first-child {
+				margin-left: 0px;
+			}
+	
+			.dot:last-child {
+				margin-right: 0px;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Just Tom</title>
+<style>html,body {background-color: #fcedd8;}</style>
+<link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+<div id="app" class="no-transition">
+	<div class="base">
+		<div class="header">
+			<img class="unlit" src="images/logo_unlit.jpg" draggable="false" ondragstart="return false;" />
+			<img class="lit" src="images/logo_lit.jpg" draggable="false" ondragstart="return false;" />
+		</div>
+		<div class="body">
+			<div class="loading">
+				<div class="airpod-wrapper">
+					<div class="airpods">
+						<img class="airpod left" src="images/airpod.png" draggable="false" ondragstart="return false;" />
+						<img class="airpod right" src="images/airpod.png" draggable="false" ondragstart="return false;" />
+					</div>
+					<img class="foreground" src="images/airpods_top_layer.png" draggable="false" ondragstart="return false;" />
+					<img class="background" src="images/airpods_bottom_layer.jpg" draggable="false" ondragstart="return false;" />
+				</div>
+				<p>This site is best experienced<br>with the sound turned on</p>
+				<button class="enter">enter</button>
+			</div>
+			<div class="read-toggle listen">
+				<button class="read">read</button>
+				<button class="listen">listen</button>
+			</div>
+			<div class="emailToggle emailHoverToggle show">
+				<button class="email"><a href="mailto:tom@justtom.ca"><img src="images/email_button.png" draggable="false" ondragstart="return false;"><p>tom@justtom.ca</p></a></button>
+			</div>
+			<div class="phoneToggle phoneHoverToggle show">
+				<button class="phone show"><a href="tel:4165433886"><img src="images/phone_button.png" draggable="false" ondragstart="return false;"><p>416.543.3886</p></a></button>
+			</div>
+			<div class="content-wrapper">
+				<div class="turnDeviceNotification">
+					<div class="phone-message"><p>REMIX! Switch to portrait mode to best experience our site.</p></div>
+					<div class="phone"><img src="images/phone-icon.png" alt=""></div>
+				</div>
+				<div class="background">
+					<div class="colored"></div>
+				</div>
+				<div class="album-gallery listen">
+					<div class="album-gallery-inner a1">
+						<div class="album">
+							<div class="normal">
+								<img class="listen" src="images/album_about.jpg" draggable="false" ondragstart="return false;" />
+								<img class="read" src="images/album_about2.png" draggable="false" ondragstart="return false;" />
+							</div>
+							<div class="hover">
+								<img class="listen" src="images/album_about_hover.jpg" draggable="false" ondragstart="return false;" />
+								<img class="read" src="images/album_about2_hover.png" draggable="false" ondragstart="return false;" />
+							</div>
+						</div>
+						<div class="album">
+							<div class="normal">
+								<img class="listen" src="images/album_work.jpg" draggable="false" ondragstart="return false;" />
+								<img class="read" src="images/album_work2.png" draggable="false" ondragstart="return false;" />
+							</div>
+							<div class="hover">
+								<img class="listen" src="images/album_work_hover.jpg" draggable="false" ondragstart="return false;"/>
+								<img class="read" src="images/album_work2_hover.png" draggable="false"  ondragstart="return false;"/>
+							</div>
+						</div>
+						<div class="album">
+							<div class="normal">
+								<img class="listen" src="images/album_contact.jpg" draggable="false" ondragstart="return false;"/>
+								<img class="read" src="images/album_contact.png" draggable="false" ondragstart="return false;" />
+							</div>
+							<div class="hover">
+								<img class="listen" src="images/album_contact_hover.jpg" draggable="false" ondragstart="return false;"/>
+								<img class="read" src="images/album_contact2_hover.png" draggable="false" ondragstart="return false;"/>
+							</div>
+						</div>
+					</div>
+					<div class="album-gallery-controls">
+						<div class="dot selected"><div class="dot-inner"></div></div>
+						<div class="dot"><div class="dot-inner"></div></div>
+						<div class="dot"><div class="dot-inner"></div></div>
+					</div>
+				</div>
+				<div class="record-animation">
+					<div class="record">
+						<div class="record-inner">
+							<img class="reflection" src="images/record_reflection.png" draggable="false" ondragstart="return false;"/>
+							<img class="about" src="images/record_about.png" draggable="false" ondragstart="return false;"/>
+							<img class="contact" src="images/record_contact.png" draggable="false" ondragstart="return false;"/>
+							<img class="work" src="images/record_work.png" draggable="false" ondragstart="return false;" />
+						</div>
+					</div>
+					<div class="animation-album">
+						<img class="about" src="images/album_about.jpg" draggable="false" ondragstart="return false;" />
+						<img class="contact" src="images/album_contact.jpg" draggable="false" ondragstart="return false;" />
+						<img class="work" src="images/album_work.jpg" draggable="false" ondragstart="return false;" />
+					</div>
+				</div>
+				<div class="record-player">
+					<div class="play-button">
+						<div class="playing">
+							<img class="normal" src="images/player_stop.jpg" draggable="false" ondragstart="return false;" />
+							<img class="hover" src="images/player_stop_hover.jpg" draggable="false"  ondragstart="return false;"/>
+						</div>
+						<div class="stopped">
+							<img class="normal" src="images/player_start.jpg" draggable="false"  ondragstart="return false;"/>
+							<img class="hover" src="images/player_start_hover.jpg" draggable="false"  ondragstart="return false;"/>
+						</div>
+						<div class="blank">
+								<img src="images/player_blank_button.jpg" draggagle="false" ondragstart="return false;"/>
+						</div>
+					</div>
+					<div class="needle">
+						<img src="images/player_needle.png" draggable="false" ondragstart="return false;"/>
+					</div>
+					<div class="record">
+						<img class="reflection" src="images/record_reflection.png" draggable="false" ondragstart="return false;"/>
+						<img class="about" src="images/record_about.png" draggable="false" ondragstart="return false;"/>
+						<img class="contact"  src="images/record_contact.png" draggable="false" ondragstart="return false;"/>
+						<img class="work" src="images/record_work.png" draggable="false" ondragstart="return false;"/>
+					</div>
+					<img class="background" src="images/player.jpg" draggable="false" ondragstart="return false;"/>
+				</div>
+				<div class="listen-section">
+					<div class="about content"></div>
+					<div class="work content">
+						<div class="switch">
+							<div class="rail"><img draggable="false" class="indicator" src="images/slider_indicator.png" draggable="false" ondragstart="return false;"></div>
+							<img class="background" draggable="false" src="images/slider_background.jpg" draggable="false" ondragstart="return false;">
+						</div>
+					</div>
+					<div class="contact content">
+					</div>
+				</div>
+				<div class="read-section hide-block">
+					<div class="about content show">
+						<p>Just Tom is Tom Thorney and friends.</p>
+						<br>
+						<p>Our team believes in providing the best audio experience, no matter what the project, so we put our website on vinyl. You can’t hear it right now, but it’s pretty great. Click listen on the right to get the full experience.</p>
+						<br>
+						<div class="message">
+							<div class="message-inner">
+								<div class="arrow arrow-left">↓</div>
+								<p>Services</p>
+								<div class="arrow arrow-right">↓</div>
+							</div>
+						</div>
+						<br>
+						<h4>Stock Library</h4>
+						<p>We have one of the most extensive stock music libraries in North America, with thousands of tracks sourced through an unrivaled worldwide network of expert composers.</p>
+						<br>
+						<h4>Original Music</h4> 
+						<p>We know Shift+4 is king. By paying upfront, we get the world’s best composers and songwriters to help bring your ideas to life.</p>
+						<br>
+						<h4>Sound Design</h4>
+						<p>Our extensive work in film and TV has us aligned with the top sound designers in North America. Hit listen on the right to hear what we can do.</p>
+						<br>
+						<h4>Music Licensing</h4>
+						<p>We’ve placed thousands of tracks for television shows, movies, and advertising, and have long-standing relationships with publishing companies and record labels.</p>
+						<br>
+						<h4>Voice Directing</h4>
+						<p>Tom’s been directing celebrities, musicians, and voice over actors, union and non-union, for almost 30 years.</p>
+						<br>
+						<h4>Tom</h4>
+						<p>Musicians, actors, writers, producers, and clients love Tom’s low-key control. Having spent time in each role, he understands their unique needs. If you were listening instead of reading, you’d be hearing his smooth voice.</p>
+					</div>
+					<div class="work content">
+						<p>At Just Tom, we have over 30 years of experience crafting radio, TV, and more for a variety of clients.</p>
+						<br>
+						<p>Our combination of Canada’s best stock music library, and a worldwide network of accomplished composers and songwriters, means we create Canada’s best audio - period.</p>
+						<br>
+						<p class="orange">Use the buttons below to explore some of our latest work.</p>
+						<div class="buttons">
+							<button class="tv">tv</button>
+							<button class="radio">radio</button>
+						</div>
+					</div>
+					<div class="contact content">
+						<h4>EMAIL</h4>
+						<p><a href="mailto:tom@justtom.ca">tom@justtom.ca</a></p>
+						<br>
+						<h4>PHONE</h4>
+						<p><a href="tel:4165048084">416.543.3886</a></p>
+						<br>
+						<h4>IN PERSON</h4>
+						<a href="https://www.google.ca/maps/place/567+Queen+St+W,+Toronto,+ON+M5V+2B6/@43.6477055,-79.4029459" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+							<p>The Orange Lounge<br>567 Queen Street West<br>Toronto, Ontario<br>M5V 2B6</p>
+						</a>
+
+						<a href="https://www.google.ca/maps/place/567+Queen+St+W,+Toronto,+ON+M5V+2B6/@43.6477055,-79.4029459" target="_blank" rel="noopener noreferrer">
+							<div class="map"></div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slider tv-slider">
+			<div class="slides-container">
+				<div class="slides">
+					<div class="slide" data-id="DGsDonxxWyA"></div>
+					<div class="slide" data-id="ikPmO_SHugU"></div>
+					<div class="slide" data-id="eOINIWCFe2c"></div>
+					<div class="slide" data-id="VcnsLfDLIfQ"></div>
+					<div class="slide" data-id="bvbmP3bu5RQ"></div>
+					<div class="slide" data-id="VpOQrGSQF3A"></div>
+					<div class="slide" data-id="GVKaGVdtiGE"></div>
+					<div class="slide" data-id="RV2LksYufl0"></div>
+					<div class="slide" data-id="Wqu4jQ8qTsg"></div>
+					<div class="slide" data-id="hV5x9Fr91og"></div>
+				</div>
+			</div>
+		</div>
+		<div class="slider radio-slider">
+			<div class="slides-container">
+				<div class="slides">
+					<div class="slide" data-id="zs2-QvyoOhc"></div>
+					<div class="slide" data-id="lpKlM8eMgb0"></div>
+					<div class="slide" data-id="nJ-b_UvGRRw"></div>
+					<div class="slide" data-id="8wegxX8PzUI"></div>
+					<div class="slide" data-id="jo76biNKmpQ"></div>
+					<div class="slide" data-id="AnAV4u7d7yQ"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="//cdn.polyfill.io/v2/polyfill.js?features=Object.values"></script>
+<script async src="//www.youtube.com/iframe_api"></script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBEkvINhhSRfPwFdy8l3mM4GPwht-SL9r4"></script>
+<script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-112754474-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-112754474-1');
+</script>
+</body>
+</html>

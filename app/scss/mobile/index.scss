@@ -1,0 +1,8 @@
+@import '../variables';
+@import '../mixins';
+
+&.mobile {
+	@import './AlbumGallery';
+	@import './ReadButton';
+	@import './RecordPlayer';
+}

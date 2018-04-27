@@ -1,0 +1,370 @@
+.album-gallery {
+	position: relative;
+	display: inline-block;
+	width: 700px;
+	top: 50px;
+	@include hcenter();
+	z-index: 2;
+
+	.hover {
+		transition: opacity 0.3s;
+	}
+
+	&.listen .album {
+		box-shadow: 5px 3px 2px -2px rgba(0, 0, 0, 0.3);
+
+		.read {
+			opacity: 0;
+		}
+
+		.listen {
+			opacity: 1;
+		}
+
+		&.selected {
+			opacity: 0;
+		}
+	}
+
+	&.read .album {
+		.listen {
+			opacity: 0;
+		}
+
+		.read {
+			opacity: 1;
+		}
+
+		&.selected {
+			.hover {
+				opacity: 1;
+			}
+
+			.normal {
+				opacity: 0;
+			}
+		}
+
+		&:not(.selected) {
+			.normal {
+				opacity: 1;
+			}
+		}
+
+		.normal {
+			transition: opacity 0.3s;
+		}
+		
+		&:hover .hover {
+			opacity: 1;
+		}
+
+		&:hover .normal {
+			opacity: 0;
+		}
+	}
+
+	.album {
+		position: relative;
+		width: 220px;
+		height: 220px;
+		float: left;
+		margin: 0 10px;
+		cursor: pointer;
+		transition: transform 0.3s;
+		transition: box-shadow 0.1s;
+
+		.normal, .listen {
+			position: relative;
+			z-index: 1;
+		}
+
+		.hover, .read {
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			width: 100%;
+			opacity: 0;
+		}
+		
+		&.selected {
+			cursor: auto;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	@media(max-width: $phone) {
+		width: 550px;
+		top: 16px;
+
+		&.read .album {
+			&.selected {
+				.hover {
+					opacity: 1;
+					z-index: 3;
+				}
+
+				.normal {
+					opacity: 0;
+				}
+
+				&:hover .hover {
+					opacity: 1;
+				}
+			}
+
+			&:not(.selected) {
+				.hover {
+					opacity: 0;
+				}
+
+				.normal {
+					opacity: 1;
+				}
+			}
+			
+			.hover .read {
+				opacity: 1;
+			}
+			
+			&:hover {
+				.normal {
+					opacity: auto;
+				}
+
+				.hover {
+					opacity: auto;
+				}
+			}
+		}
+
+		.album {
+			width: 170px;
+			height: 170px;
+		}
+
+		&.listen .album {
+			&.selected {
+				box-shadow: 11px 8px 8px -2px rgba(0, 0, 0, 0.3);
+			}
+		}
+
+		
+	}
+
+	@media(max-width: $phone5) {
+		width: 422px;
+		top: 16px;
+		&.read .album {
+			&.selected {
+				.hover {
+					opacity: 1;
+					z-index: 3;
+				}
+
+				.normal {
+					opacity: 0;
+				}
+
+				&:hover .hover {
+					opacity: 1;
+				}
+			}
+
+			&:not(.selected) {
+				.hover {
+					opacity: 0;
+				}
+
+				.normal {
+					opacity: 1;
+				}
+			}
+			
+			.hover .read {
+				opacity: 1;
+			}
+			
+			&:hover {
+				.normal {
+					opacity: auto;
+				}
+
+				.hover {
+					opacity: auto;
+				}
+			}
+		}
+
+		.album {
+			width: 130px;
+			height: 130px;
+			margin: 0 8px;
+		}
+
+		&.listen .album {
+			&.selected {
+				box-shadow: 8px 6px 6px -2px rgba(0, 0, 0, 0.3);
+			}
+		}
+	}
+
+	@media(max-width: $tablet) and (min-height: $largeScreen){
+		position: relative;
+		display: inline-block;
+		width: 700px;
+		top: 50px;
+		@include hcenter();
+		z-index: 2;
+
+			&.listen .album {
+				&:hover {
+					transform: scale(1) !important;
+					box-shadow: 11px 8px 8px -2px rgba(0, 0, 0, 0.3);
+				}
+			}
+	
+		&.read .album {
+			&.selected {
+				.hover {
+					opacity: 1;
+					z-index: 3;
+				}
+
+				.normal {
+					opacity: 0;
+				}
+
+				&:hover .hover {
+					opacity: 1;
+				}
+			}
+
+			&:not(.selected) {
+				.hover {
+					opacity: 0;
+				}
+
+				.normal {
+					opacity: 1;
+				}
+			}
+			
+			.hover .read {
+				opacity: 1;
+			}
+			
+			&:hover {
+				.normal {
+					opacity: auto;
+				}
+
+				.hover {
+					opacity: auto;
+				}
+			}
+		}
+	
+		.album {
+			position: relative;
+			width: 220px;
+			height: 220px;
+			float: left;
+			margin: 0 10px;
+			transition: transform 0.3s;
+			transition: box-shadow 0.1s;
+	
+		}
+	}
+
+
+
+	
+	@media(min-width: $tablet + 1) and (min-height: $largeScreen) {
+		width: 865px;
+
+		.album {
+			width: 275px;
+			height: 275px;
+		}
+	}
+
+	@media(max-height: $tablet) and (min-width: 1024px){
+		position: relative;
+		display: inline-block;
+		width: 700px;
+		top: 50px;
+		@include hcenter();
+		z-index: 2;
+
+		&.listen .album {
+			&:hover {
+				transform: scale(0);
+				box-shadow: 11px 8px 8px -2px rgba(0, 0, 0, 0.3);
+			}
+		}
+		
+	
+		&.read .album {
+			&.selected {
+				.hover {
+					opacity: 1;
+					z-index: 3;
+				}
+
+				.normal {
+					opacity: 0;
+				}
+
+				&:hover .hover {
+					opacity: 1;
+				}
+			}
+
+			&:not(.selected) {
+				.hover {
+					opacity: 0;
+				}
+
+				.normal {
+					opacity: 1;
+				}
+			}
+			
+			.hover .read {
+				opacity: 1;
+			}
+			
+			&:hover {
+				.normal {
+					opacity: auto;
+				}
+
+				.hover {
+					opacity: auto;
+				}
+			}
+		}
+	
+		.album {
+			position: relative;
+			width: 220px;
+			height: 220px;
+			float: left;
+			margin: 0 10px;
+			transition: transform 0.3s;
+			transition: box-shadow 0.1s;
+	
+		}
+	}
+	@media (max-width: $phone) and (orientation: landscape) { 
+		display: none;
+	}
+}

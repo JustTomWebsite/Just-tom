@@ -1,0 +1,227 @@
+.slider {
+	position: fixed;
+	display: none;
+	opacity: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+
+	.slides-container, .slides-controls {
+		position: relative;
+		margin-left: 50%;
+		top: 50%;
+		overflow: hidden;
+		transform: translate(-50%, -50%);
+	}
+
+	.slides-container {
+		z-index: 2;
+		background: white;
+	}
+
+	.slides-controls {
+		position: absolute;
+		overflow: visible;
+		z-index: 1;
+
+		.arrow, .exit {
+			position: absolute;
+		}
+
+		.arrow {
+			top: 50%;
+			transform: translateY(-50%);
+			width: 63px;
+			height: 50px;
+		}
+
+		.arrow:hover .hover, .exit:hover .hover {
+			opacity: 1;
+		}
+		.arrow:hover .normal, .exit:hover .normal {
+			opacity: 0;
+		}
+
+		.hover {
+			position: absolute;
+			transition: 0.3s opacity;
+			cursor: pointer;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			opacity: 0;
+		}
+
+		.normal {
+			transition: 0.3s opacity;
+			cursor: pointer;
+		}
+
+		.arrow-left {
+			left: -63px;
+		}
+
+		.arrow-right {
+			right: -63px;
+			transform: translateY(-50%) scaleX(-1);
+		}
+
+		.exit {
+			top: -50px;
+			right: 0;
+		}
+
+		img {
+			width: 20px;
+			margin-left: 15px;
+			margin-top: 15px;
+		}
+	}
+
+	.dots {
+		position: absolute;
+		bottom: 21px;
+		width: 100%;
+		z-index: 3;
+
+		.dots-inner {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			white-space: nowrap;
+		}
+
+		.dot.selected .filled {
+			opacity: 1;
+		}
+
+		.dot {
+			position: relative;
+			display: inline-block;
+			margin: 0 4px;
+			cursor: pointer;
+		}
+
+		.dot:first-child {
+			margin-left: 0;
+		}
+
+		.dot:last-child {
+			margin-right: 0;
+		}
+
+		.dot .unfilled, .dot .filled {
+			width: 10px;
+			height: 10px;
+			background: #ccc;
+			border-radius: 10px;
+		}
+
+		.dot .filled {
+			background: #000;
+			transition: 0.3s opacity;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+		}
+	}
+
+    .slide {
+		position: relative;
+		overflow: hidden;
+		background: white;
+		float: left;
+
+		.video {
+			position: relative;
+			width: 98%;
+			height: calc(100% - 40px);
+			margin: 1% 0 0 1%;
+			z-index: 1;
+
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.label {
+			width: 100%;
+			text-align: center;
+			margin-top: 18px;
+			display: none;
+		}
+
+		.preview {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 2;
+		}
+	}
+
+	.slides {
+		position: relative;
+		display: inline-block;
+		transition: 1s left;
+		z-index: 2;
+		width: 100000px;
+	}
+
+	.background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.8;
+		background: #000;
+		z-index: 1;
+	}
+
+	@media(max-width: $phone) {
+		.slides-controls {
+			.arrow-left {
+				left: 0;
+			}
+
+			.arrow-right {
+				right: 0;
+			}
+
+			.arrow-left, .arrow-right {
+				top: auto;
+				bottom: -76px;
+			}
+		}
+
+		.dots {
+			bottom: 25px;
+		}
+
+		.arrow:hover .hover, .exit:hover .hover {
+			opacity: 0 !important;
+		}
+		.arrow:hover .normal, .exit:hover .normal {
+			opacity: 1 !important;
+		}
+	}
+	@media(min-width: $phone) and (max-width: $tablet) and (min-height: $largeScreen) {
+		.arrow:hover .hover, .exit:hover .hover {
+			opacity: 0 !important;
+		}
+		.arrow:hover .normal, .exit:hover .normal {
+			opacity: 1 !important;
+		}
+	}
+	@media (max-width: $phone) and (orientation: landscape) { 
+		display: none;
+	}
+}

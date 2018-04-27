@@ -1,0 +1,258 @@
+.record-animation {
+	top: 50px;
+	width: 220px;
+	@include hcenter();
+	z-index: 3;
+	pointer-events: none;
+
+	.record, .animation-album {
+		position: absolute;
+		width: inherit;
+		z-index: 1;
+
+		.about {
+			position: relative;
+		}
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+		}
+
+		.show {
+			opacity: 1;
+		}
+	}
+
+	.record {
+		top: 30px;
+	}
+
+	img.reflection {
+		z-index: 5;
+		opacity: 1;
+	}
+
+	.animation-album img {
+		box-shadow: 11px 8px 8px -2px rgba(0, 0, 0, 0.3);
+	}
+
+	.animation-album .contact {
+		-webkit-transform: translateZ(0);
+		-webkit-transform: translateX(240px);
+		transform: translateX(240px);
+	}
+
+	.animation-album .about {
+		
+		-webkit-transform: translateZ(0);
+		-webkit-transform: translateX(-240px);
+		transform: translateX(-240px);
+	}
+
+	.rotateAlbum {
+		animation-name: rotateAlbum;
+		animation-duration: 2s;
+	}
+
+	@media(max-width: $phone) {
+		width: 170px;
+		top: 16px;
+
+		.animation-album .contact, .animation-album .about {
+			transform: none;
+		}
+	}
+	@media(max-width: $phone5) {
+		width: 130px;
+		top: 16px;
+		.record {
+			top: 10px;
+		}
+
+		.animation-album .contact, .animation-album .about {
+			transform: none;
+		}
+	}
+
+
+	@media (max-width: $tablet) and (min-height: $largeScreen) {
+		top: 50px;
+		width: 220px;
+		@include hcenter();
+		z-index: 3;
+		pointer-events: none;
+	
+		.record, .animation-album {
+			position: absolute;
+			width: inherit;
+			z-index: 1;
+	
+			.about {
+				position: relative;
+			}
+			img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0;
+			}
+	
+			.show {
+				opacity: 1;
+			}
+		}
+	
+		.record {
+			top: 30px;
+		}
+	
+		img.reflection {
+			z-index: 5;
+			opacity: 1;
+		}
+	
+		.animation-album img {
+			box-shadow: 11px 8px 8px -2px rgba(0, 0, 0, 0.3);
+		}
+	
+		.animation-album .contact {
+			will-change: transform; 
+			-webkit-transform: translateZ(0);
+			transform: translate3d(0,0,0);
+			-webkit-transform: translate3d(0,0,0);
+			transform: translateZ(0);
+			transform: translateX(240px);
+			-webkit-transform: translateX(240px);
+		}
+	
+		.animation-album .about {
+			will-change: transform; 
+			-webkit-transform: translateZ(0);
+			transform: translate3d(0,0,0);
+			-webkit-transform: translate3d(0,0,0);
+			transform: translateZ(0);
+			-webkit-transform: translateX(-240px);
+			transform: translateX(-240px);
+		}
+	
+		.rotateAlbum {
+			animation-name: rotateAlbum;
+			animation-duration: 2s;
+		}
+	}
+
+	@media (min-width: $tablet + 1) and (min-height: $largeScreen) {
+		width: 275px;
+		height: 275px;
+
+		.animation-album .contact {
+			will-change: transform; 
+			-webkit-transform: translateZ(0);
+			transform: translate3d(0,0,0);
+			-webkit-transform: translate3d(0,0,0);
+			transform: translateX(294px);
+			-webkit-transform: translateX(294px);
+		}
+	
+		.animation-album .about {
+			will-change: transform; 
+			-webkit-transform: translateZ(0);
+			transform: translate3d(0,0,0);
+			-webkit-transform: translate3d(0,0,0);
+			transform: translateX(-296px);
+			-webkit-transform: translateX(-296px);
+		}
+	}
+
+	@media (max-height: $tablet) and (min-width: 1024px) {
+		top: 50px;
+		width: 220px;
+		@include hcenter();
+		z-index: 3;
+		pointer-events: none;
+	
+		.record, .animation-album {
+			position: absolute;
+			width: inherit;
+			z-index: 1;
+	
+			.about {
+				position: relative;
+			}
+			img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0;
+			}
+	
+			.show {
+				opacity: 1;
+			}
+		}
+	
+		.record {
+			top: 30px;
+		}
+	
+		img.reflection {
+			z-index: 5;
+			opacity: 1;
+		}
+	
+		.animation-album img {
+			box-shadow: 11px 8px 8px -2px rgba(0, 0, 0, 0.3);
+		}
+	
+		.animation-album .contact {
+			will-change: transform; 
+			transform: translate3d(0,0,0);
+			-webkit-transform: translate3d(0,0,0);
+			transform: translateZ(0);
+			transform: translateX(240px);
+			-webkit-transform: translateX(240px);
+		}
+	
+		.animation-album .about {
+			will-change: transform; 
+			transform: translate3d(0,0,0);
+			-webkit-transform: translate3d(0,0,0);
+			transform: translateZ(0);
+			transform: translateX(-240px);
+			-webkit-transform: translateX(-240px);
+		}
+	
+		.rotateAlbum {
+			will-change: transform; 
+			animation-name: rotateAlbum;
+			animation-duration: 2s;
+		}
+	}
+
+	@media (max-width: $phone) and (orientation: landscape) { 
+		display: none;
+	}
+
+
+@keyframes rotateAlbum {
+	0% {
+		will-change: transform; 
+		transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-webkit-transform: translateZ(0);
+		transform: scale(0.95) translateY(265px) rotate(0deg);
+		-webkit-transform: scale(0.95) translateY(265px) rotate(0deg);
+	}
+
+	100% {
+		will-change: transform; 
+		transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-webkit-transform: translateZ(0);
+		transform: scale(0.95) translateY(265px) rotate(360deg);
+		-webkit-transform: scale(0.95) translateY(265px) rotate(360deg);
+	}
+}
+}

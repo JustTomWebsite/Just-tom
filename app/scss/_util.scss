@@ -1,0 +1,77 @@
+.show {
+	opacity: 1 !important;
+	z-index: 2;
+	display: block !important;
+	pointer-events: auto !important;
+}
+
+.hide {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.hide-block {
+	display: none;
+}
+
+.no-transition * {
+	transition: none !important;
+}
+
+.bold {
+	font-weight: 100;
+}
+
+.orange {
+	color: $orangeColor;
+}
+
+.no-overflow {
+	overflow: hidden !important;
+}
+
+@keyframes fadeIn {
+	0% {
+		visibility: hidden;
+		opacity: 1;
+	}
+
+	1% {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	100% {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	99% {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	100% {
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+.fade-in {
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+.fade-out {
+	animation-name: fadeOut;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}

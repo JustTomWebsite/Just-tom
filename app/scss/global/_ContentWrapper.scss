@@ -1,0 +1,120 @@
+.content-wrapper {
+	position: relative;
+	width: 100%;
+	transform: translateX(100%);
+	z-index: 2;
+	display: inline-block;
+	margin-top: 120px;
+	opacity: 1;
+	&.visited {
+		transition: none !important;
+		transform: translateX(0%);
+	}
+
+	&.entered {
+		transition: 1s transform;
+		transform: translateX(0%);
+	}
+
+	&:not(.loaded) {
+		opacity: 0;
+	}
+
+	&.read .background .colored {
+		opacity: 1;
+	}
+
+	> .background {
+		position: absolute;
+		z-index: 1;
+		width: 100vw;
+		height: 111vh;
+		background: url(./images/background.jpg) repeat;
+		background-size: 560px;
+
+		.colored {
+			width: inherit;
+			height: inherit;
+			background: $loadingBackgroundColor;
+			opacity: 0;
+			transition: 0.4s opacity;
+		}
+	}
+	.turnDeviceNotification { 
+		display: none;
+
+		} 
+
+	@media(max-width: $phone) {
+		margin-top: 65px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		-webkit-overflow-scrolling: touch;
+					
+		height: calc(100% - 65px);
+		
+		> .background {
+			height: 100vh;
+		}
+	}
+	@media(max-width: $phone) and (orientation: landscape) {
+		overflow-x: hidden;
+		overflow-y: hidden;
+		
+		> .background {
+			display: none;
+			height: 100% !important;
+			overflow-y: hidden;
+			-webkit-overflow-scrolling: hidden;
+		}
+	}
+	@media(max-width: $tablet) and (min-height: $largeScreen){
+		height: calc(100% - 120px);
+		overflow-x: hidden;
+		.turnDeviceNotification { 
+			display: none;
+
+			} 
+	}
+
+	@media (max-width: $phone) and (orientation: landscape) { 
+		.turnDeviceNotification { 
+			display:block;
+			position:fixed;
+			top: 0;
+			left:0;
+			width:100%;	
+			height: 100%;
+			background-color: #fcedd8;
+			z-index: 999;
+			overflow-y: hidden;
+			-webkit-overflow-scrolling: hidden;
+
+			.phone {
+				position: relative;
+				top: 45% !important;
+				left: 50%;
+				transform: translate3d(0,0,0) translate(-50%,-50%)!important;
+				width: 125px;
+			}
+
+			.phone-message {
+				color: #45b6d9;
+				position: relative;
+				text-align: center;
+				padding-bottom: 5%;
+				top: 15%;
+	
+			}
+
+		} 
+
+
+	} 
+	@media (max-width: $phone) and (orientation:portrait) {
+		 .turnDeviceNotification { 
+			display: none;
+
+			} 
+		} 
+}

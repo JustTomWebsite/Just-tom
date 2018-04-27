@@ -1,0 +1,67 @@
+.header {
+	position: fixed;
+	width: 100%;
+	z-index: 5;
+	height: $headerHeight;
+	background: #3aa7d0;
+
+	img {
+		@include center();
+		z-index: 1;
+		height: 100%;
+		width: auto;
+	}
+
+	.lit {
+		opacity: 0;
+	}
+
+	&.loaded .lit {
+		z-index: 2;
+		animation-name: toggle;
+		animation-duration: 20s;
+		animation-iteration-count: infinite;
+	}
+
+	@media(max-width: $phone) {
+		height: 65px;
+
+		img {
+			height: 99%;
+		}
+	}
+}
+
+@keyframes toggle {
+	0% {
+		opacity: 1;
+	}
+
+	59.99% {
+		opacity: 1;
+	}
+
+	60% {
+		opacity: 0;
+	}
+
+	60.10% {
+		opacity: 1;
+	}
+
+	91.99% {
+		opacity: 1;
+	}
+
+	92% {
+		opacity: 0;
+	}
+
+	92.10% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

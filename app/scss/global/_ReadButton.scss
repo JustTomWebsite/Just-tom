@@ -1,0 +1,79 @@
+.read-toggle {
+	position: fixed;
+    right: -30px;
+	top: 457px;
+    width: 90px;
+    height: 58px;
+	border-radius: 5px 5px 0 0;
+	transform: rotate(-90deg);
+	z-index: 100;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s opacity, 0.1s transform;
+
+
+	button {
+		height: 41px;
+		font-size: 1.3em;
+		position: absolute;
+		width: inherit;
+		color: #ffffff;
+	}
+
+	&.listen button.listen {
+		opacity: 0;
+	}
+
+	&.listen, button.read {
+		background: $loadingTextColor;
+	}
+
+	&.read, button.listen {
+		background: #ef3007;
+	}
+
+	&:hover {
+		transform: rotate(-90deg) translateY(-3px);
+	}
+
+
+	@media(max-width: $phone) {
+		right: -40px;
+		top: 311px;
+
+		&:hover {
+			transform: rotate(-90deg);
+		}
+
+		button {
+			height: 35px;
+		}
+	}
+	
+	@media(max-width: $phone5) {
+		right: -40px;
+		top: 271px;
+
+		&:hover {
+			transform: rotate(-90deg);
+		}
+
+		button {
+			height: 35px;
+		}
+	}
+	@media(max-width: $phone) and (orientation: landscape){
+		display: none !important;
+	}
+	@media(max-width: $tablet) and (min-height: $largeScreen){
+		top: 453px;
+	}
+	@media(min-width: $tablet + 1) and (min-height: $largeScreen) {
+		top: 527px;
+	}
+
+}
+
+.unclickable {
+	opacity: 1 !important;
+}

@@ -1,0 +1,196 @@
+.emailToggle{
+    position: fixed;
+    right: -262px;
+    top: 550px;
+    width: 260px;
+    height: 48px;
+    border-radius: 5px 0px 0px 5px;
+    z-index: 100;
+    pointer-events: none;
+    transition: .3s opacity,.1s transform;
+    background: #da4225;
+	-webkit-transition: right 1s ease-out;
+	-moz-transition: right 1s ease-out;
+	-o-transition: right 1s ease-out;
+	transition: right 1s ease-out;
+
+    
+
+    button {
+        height: 48px;
+		font-size: 1.3em;
+        width: 245px;
+		color: #fff;
+
+        > a {
+            color: #fff;
+            position: relative;
+            vertical-align: middle;
+            line-height: 16px;
+            float: left;
+
+            > img {
+                float: left;
+                margin-left: 13px;
+                margin-right: auto;
+                width: 8%;
+                }
+
+            > p {
+                float: left;
+                margin-left: 15px;
+            }
+    
+        }
+    }
+
+    button > * {
+        vertical-align: middle;  
+    }
+
+
+    button.email {
+        background: #da4225;
+    }
+
+
+
+
+
+
+    @media(max-width: $phone) {
+		width: 260px;
+		top: 415px;
+		right: -273px;
+		-webkit-transition: none;
+		-moz-transition: none;
+		-o-transition: none;
+		transition: none;
+		button {
+            height: 48px;
+            width: 27px;
+			> a {
+				color: #fff;
+				position: relative;
+				vertical-align: middle;
+				line-height: 16px;
+				float: left;
+	
+				> img {
+					float: left;
+					margin-left: 10px;
+					margin-right: auto;
+					width: 60%;
+					}
+	
+				> p {
+					display: none;
+				}
+		
+			}
+        }
+        
+    }
+
+    @media(max-width: $phone5) {
+        width: 260px;
+		top: 366px;
+		right: -273px;
+		-webkit-transition: none;
+		-moz-transition: none;
+		-o-transition: none;
+		transition: none;
+		button {
+            height: 48px;
+            width: 27px;
+			> a {
+				color: #fff;
+				position: relative;
+				vertical-align: middle;
+				line-height: 16px;
+				float: left;
+	
+				> img {
+					float: left;
+					margin-left: 10px;
+					margin-right: auto;
+					width: 60%;
+					}
+	
+				> p {
+					display: none;
+				}
+		
+			}
+        }
+       
+    }
+
+    
+    
+    @media(min-width: $tablet + 1) and (min-height: $largeScreen) {
+        top: 620px;
+		width: 260px;
+
+	}
+
+}
+.emailHoverToggle:hover {
+    right: -65px;
+}
+@media(max-width: $phone) {
+    .emailHoverToggle:hover {
+        right: -273px !important;
+    }
+}
+
+@media(max-width: $phone5) {
+    .emailHoverToggle:hover {
+        right: -273px !important;
+    }
+}
+
+
+
+.slide-in {
+    animation: slide-in 1s forwards;
+    -webkit-animation: slide-in 1s forwards;
+}
+
+.slide-out {
+    animation: slide-out 1s forwards;
+    -webkit-animation: slide-out 1s forwards;
+}
+.hover-state-in{
+	animation: hover-state-in 1s both forwards;
+	-webkit-animation: hover-state-in 1s both forwards;
+}
+
+.hover-state-out {
+	animation: hover-state-out 1s both ease-in-out;
+	-webkit-animation: hover-state-out 1s both ease-in-out;
+}
+
+    
+
+//animations
+@keyframes slide-in {
+    0% { transform: translateX(-18%); }
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    0% { -webkit-transform: translateX(-18%); }
+    100% { -webkit-transform: translateX(0%); }
+}
+
+@keyframes slide-out {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-18%); }
+}
+
+@-webkit-keyframes slide-out {
+    0% { -webkit-transform: translateX(0%); }
+    100% { -webkit-transform: translateX(-18%); }
+}
+

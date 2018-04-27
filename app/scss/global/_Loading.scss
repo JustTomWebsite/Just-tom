@@ -1,0 +1,181 @@
+.loading {
+	@include center();
+	width: 300px;
+	color: $loadingTextColor;
+	z-index: 1;
+	transition: opacity 0.1s;
+	transition-delay: 1s;
+	top: 63%;
+
+	&.entered {
+		opacity: 0;
+	}
+
+	.airpod-wrapper {
+		width: inherit;
+		display: inline-block;
+	}
+
+	.airpods {
+		.airpod {
+			position: absolute;
+		}
+
+		.airpod.left {
+			transform: scaleX(-1);
+			animation-name: airpodLeft;
+			animation-duration: 3.5s;
+			animation-fill-mode: forwards;
+			z-index: 2;
+		}
+
+		.airpod.right {
+			animation-name: airpodRight;
+			animation-duration: 4s;
+			animation-fill-mode: forwards;
+			z-index: 2;
+		}
+	}
+
+	.foreground, .background {
+		width: 100%;
+	}
+
+	.foreground {
+		position: absolute;
+		z-index: 3;
+	}
+
+	.background {
+		z-index: 1;
+	}
+
+	p, button.enter {
+		@include fade(1s);
+	}
+
+	button.show {
+		pointer-events: auto;
+	}
+
+	p {
+		width: 90%;
+		margin-left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		line-height: 1.5em;
+	}
+
+	button {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	button.enter {
+		margin-left: 50%;
+		transform: translateX(-50%);
+		width: 40%;
+		height: 29px;
+		margin-top: 30px;
+		background: $loadingTextColor;
+		color: $loadingBackgroundColor;
+		font-weight: 800;
+	}
+	.redColour{
+		background: red !important;
+	}
+
+	button.enter:hover {
+		transform: translateX(-50%) translateY(2px);
+	}
+
+	button.enter:active {
+		transform: translateX(-50%) translateY(3px);
+	}
+
+	@media(max-height: $largeScreen) {
+		p {
+			width: 100%;
+		}
+	}
+
+	@media(max-width: $phone) {
+		width: 100%;
+		height: 100vh;
+		top: 50%;
+
+		.airpod-wrapper {
+			position: relative;
+			width: 50%;
+			margin-left: 50%;
+			margin-top: 50%;
+			transform: translateX(-50%);
+		}
+
+		.airpod.left {
+			animation-name: airpodLeftMobile !important;
+		}
+
+		.airpod.right {
+			animation-name: airpodRightMobile !important;
+		}
+
+		p {
+			width: 260px;
+			line-height: 17px;
+			letter-spacing: 0.01px; // designer made me do it
+		}
+
+		button.enter {
+			width: 27%;
+			height: 30px;
+		}
+	}
+	@media(max-width: $phone) and (orientation: landscape) {
+		top: 10%;
+	}
+
+	@media(max-height: $tablet) and (min-width: 1024px){
+		
+	}
+}
+
+@keyframes airpodLeftMobile {
+	0% {
+		transform: scaleX(-1) translateY(0px);
+	}
+
+	100% {
+		transform: scaleX(-1) translateY(-61px);
+	}
+}
+
+@keyframes airpodRightMobile {
+	0% {
+		transform: translateY(0px);
+	}
+
+	100% {
+		transform: translateY(-79px);
+	}
+}
+
+@keyframes airpodLeft {
+	0% {
+		transform: scaleX(-1) translateY(0px);
+	}
+
+	100% {
+		transform: scaleX(-1) translateY(-100px);
+	}
+}
+
+@keyframes airpodRight {
+	0% {
+		transform: translateY(0px);
+	}
+
+	100% {
+		transform: translateY(-130px);
+	}
+}

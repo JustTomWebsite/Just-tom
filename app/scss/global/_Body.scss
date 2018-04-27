@@ -1,0 +1,30 @@
+.body {
+	position: relative;
+	min-height: 100vh;
+	height: inherit;
+	overflow-y: visible;
+	margin-left: 0;
+	background: $loadingBackgroundColor;
+
+	@media(max-width: $phone) {
+		width: 100%;
+		height: 100%;
+		margin-left: 0;
+		overflow-y: scroll; /* has to be scroll, not auto */
+		-webkit-overflow-scrolling: touch;
+	}
+	@media(max-width: $phone5) {
+		width: 100%;
+		height: 100%;
+		margin-left: 0;
+		// overflow-y: scroll; /* has to be scroll, not auto */
+		// -webkit-overflow-scrolling: touch;
+	}
+
+	@media(max-width: $phone) and (orientation: landscape) {
+		.entered {
+		overflow-y: hidden;
+		}
+	}
+
+}
